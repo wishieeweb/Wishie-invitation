@@ -1,0 +1,768 @@
+/* =========================
+WISHIE WEDDING WEBSITE
+Red & White Theme
+========================= */
+
+:root {
+--red: #c6283d;
+--dark-red: #8f1428;
+--light-red: #fff0f1;
+--soft-red: #fbd5d9;
+--cream: #fffafa;
+--text: #451820;
+--muted: #916d73;
+--white: #ffffff;
+--border: #e8b4bc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+min-height: 100vh;
+font-family: "DM Sans", sans-serif;
+color: var(--text);
+
+background:
+radial-gradient(circle at top left, #ffe0e3, transparent 40%),
+radial-gradient(circle at bottom right, #ffd5dc, transparent 40%),
+#fff7f7;
+
+overflow-x: hidden;
+}
+
+/* Background decorations */
+
+.background-decor {
+position: fixed;
+inset: 0;
+overflow: hidden;
+pointer-events: none;
+z-index: 0;
+}
+
+.background-decor span {
+position: absolute;
+color: rgba(198, 40, 61, 0.2);
+font-size: 25px;
+animation: floatDecor 7s ease-in-out infinite;
+}
+
+.background-decor span:nth-child(1) {
+top: 12%;
+left: 8%;
+}
+
+.background-decor span:nth-child(2) {
+top: 30%;
+right: 10%;
+animation-delay: 1s;
+}
+
+.background-decor span:nth-child(3) {
+top: 70%;
+left: 12%;
+animation-delay: 2s;
+}
+
+.background-decor span:nth-child(4) {
+top: 80%;
+right: 12%;
+animation-delay: 3s;
+}
+
+.background-decor span:nth-child(5) {
+top: 48%;
+left: 4%;
+animation-delay: 1.5s;
+}
+
+.background-decor span:nth-child(6) {
+top: 15%;
+right: 25%;
+animation-delay: 2.5s;
+}
+
+@keyframes floatDecor {
+0%, 100% {
+transform: translateY(0) rotate(0);
+}
+
+50% {
+transform: translateY(-20px) rotate(15deg);
+}
+}
+
+/* Main page */
+
+.page {
+position: relative;
+z-index: 1;
+min-height: 85vh;
+padding: 35px 16px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.screen {
+display: none;
+width: 100%;
+max-width: 500px;
+}
+
+.screen.active {
+display: block;
+animation: screenAppear 0.6s ease both;
+}
+
+@keyframes screenAppear {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Invitation card */
+
+.invitation-card {
+position: relative;
+width: 100%;
+padding: 38px 25px;
+text-align: center;
+
+background: rgba(255, 255, 255, 0.94);
+
+border: 2px solid var(--border);
+border-radius: 25px;
+
+box-shadow:
+0 15px 45px rgba(143, 20, 40, 0.12),
+inset 0 0 0 7px #fff7f7;
+}
+
+.invitation-card::before {
+content: "";
+position: absolute;
+inset: 12px;
+border: 1px solid rgba(198, 40, 61, 0.15);
+border-radius: 16px;
+pointer-events: none;
+}
+
+.top-decoration {
+color: var(--red);
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 4px;
+margin-bottom: 28px;
+}
+
+.flower {
+font-size: 42px;
+margin-bottom: 10px;
+animation: flowerFloat 3s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+0%, 100% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(-8px);
+}
+}
+
+.small-heading {
+color: var(--muted);
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 3px;
+margin-bottom: 14px;
+}
+
+.invitation-card h1 {
+color: var(--dark-red);
+font-family: "Great Vibes", cursive;
+font-size: clamp(45px, 12vw, 65px);
+font-weight: 400;
+line-height: 1.3;
+margin-bottom: 12px;
+}
+
+.divider {
+color: var(--red);
+font-size: 15px;
+margin: 18px 0;
+}
+
+.intro {
+position: relative;
+z-index: 1;
+color: var(--muted);
+font-size: 14px;
+line-height: 1.9;
+margin: 12px auto;
+max-width: 340px;
+}
+
+.tiny-note {
+color: #b58c92;
+font-size: 10px;
+letter-spacing: 1px;
+margin-top: 25px;
+}
+
+/* Buttons */
+
+.primary-btn {
+position: relative;
+z-index: 2;
+
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+
+width: 100%;
+max-width: 290px;
+min-height: 52px;
+
+padding: 14px 20px;
+margin-top: 22px;
+
+border: none;
+border-radius: 50px;
+
+background: linear-gradient(
+135deg,
+#e53950,
+#a91631
+);
+
+color: var(--white);
+font-family: "DM Sans", sans-serif;
+font-size: 14px;
+font-weight: 700;
+
+cursor: pointer;
+
+box-shadow: 0 8px 20px rgba(198, 40, 61, 0.25);
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.primary-btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 12px 25px rgba(198, 40, 61, 0.3);
+}
+
+.primary-btn:active {
+transform: scale(0.97);
+}
+
+.primary-btn span {
+font-size: 19px;
+}
+
+.secondary-btn {
+display: block;
+margin: 15px auto 0;
+padding: 10px 20px;
+
+border: 1px solid var(--border);
+border-radius: 30px;
+
+background: transparent;
+color: var(--dark-red);
+
+font-family: "DM Sans", sans-serif;
+font-size: 13px;
+
+cursor: pointer;
+}
+
+.secondary-btn:hover {
+background: var(--light-red);
+}
+
+/* Details screen */
+
+.details-card {
+padding-top: 35px;
+padding-bottom: 30px;
+}
+
+.details-card .top-decoration {
+margin-bottom: 25px;
+}
+
+.details-card h1.script-heading {
+font-size: clamp(42px, 11vw, 58px);
+}
+
+.couple-preview {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+margin: 20px 0;
+}
+
+.couple-preview span {
+font-size: 45px;
+}
+
+.couple-preview .heart-between {
+color: var(--red);
+font-size: 24px;
+animation: heartBeat 1s infinite;
+}
+
+.event-details {
+position: relative;
+z-index: 1;
+text-align: left;
+margin: 25px 0;
+padding: 20px 15px;
+
+border: 1px solid #f0cbd0;
+border-radius: 18px;
+background: #fff7f7;
+}
+
+.detail-item {
+display: flex;
+align-items: center;
+gap: 13px;
+padding: 12px 0;
+}
+
+.detail-item + .detail-item {
+border-top: 1px solid #f1d9dc;
+}
+
+.detail-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+
+flex-shrink: 0;
+width: 42px;
+height: 42px;
+
+background: white;
+border-radius: 50%;
+font-size: 20px;
+}
+
+.detail-item h3 {
+color: var(--dark-red);
+font-family: "Playfair Display", serif;
+font-size: 14px;
+margin-bottom: 4px;
+}
+
+.detail-item p {
+color: var(--muted);
+font-size: 11px;
+line-height: 1.6;
+}
+
+.final-intro {
+margin-top: 18px;
+}
+
+/* Celebration overlay */
+
+.wedding-scene {
+position: fixed;
+inset: 0;
+z-index: 9999;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 15px;
+
+background: rgba(65, 10, 23, 0.82);
+backdrop-filter: blur(8px);
+
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+
+transition:
+opacity 0.4s ease,
+visibility 0.4s ease;
+}
+
+.wedding-scene.show {
+opacity: 1;
+visibility: visible;
+pointer-events: auto;
+}
+
+.wedding-card {
+position: relative;
+z-index: 2;
+
+width: 100%;
+max-width: 420px;
+max-height: 90vh;
+overflow-y: auto;
+
+padding: 30px 20px;
+
+text-align: center;
+
+background: linear-gradient(
+145deg,
+#ffffff,
+#fff0f1,
+#ffffff
+);
+
+border: 2px solid var(--border);
+border-radius: 25px;
+
+box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+
+transform: scale(0.75) translateY(30px);
+
+transition: transform 0.5s cubic-bezier(.2, 1.3, .5, 1);
+}
+
+.wedding-scene.show .wedding-card {
+transform: scale(1) translateY(0);
+}
+
+.close-btn {
+position: absolute;
+top: 12px;
+right: 12px;
+
+width: 35px;
+height: 35px;
+
+border: none;
+border-radius: 50%;
+
+background: var(--red);
+color: white;
+
+font-size: 24px;
+line-height: 1;
+
+cursor: pointer;
+}
+
+.popup-flower {
+font-size: 30px;
+margin: 5px 0 12px;
+}
+
+.wedding-card h2 {
+color: var(--dark-red);
+font-family: "Playfair Display", serif;
+font-size: 25px;
+margin-bottom: 12px;
+}
+
+.wedding-message {
+color: var(--muted);
+font-size: 13px;
+line-height: 1.8;
+}
+
+/* Bride and groom */
+
+.couple {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+
+margin: 30px 0 20px;
+}
+
+.person {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+}
+
+.person-emoji {
+display: inline-block;
+font-size: clamp(48px, 14vw, 68px);
+
+filter: drop-shadow(0 5px 5px #e8b4bc);
+}
+
+.person-label {
+color: var(--dark-red);
+font-size: 11px;
+font-weight: 700;
+}
+
+.bride {
+opacity: 0;
+}
+
+.groom {
+opacity: 0;
+}
+
+.wedding-scene.show .bride {
+animation: brideArrives 0.8s ease 0.2s forwards;
+}
+
+.wedding-scene.show .groom {
+animation: groomArrives 0.8s ease 0.2s forwards;
+}
+
+/* Ring */
+
+.ring-presentation {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 5px;
+}
+
+.ring {
+display: inline-block;
+font-size: clamp(30px, 9vw, 45px);
+opacity: 0;
+}
+
+.wedding-scene.show .ring {
+animation: ringAppears 0.7s ease 0.7s forwards,
+ringSparkle 1.3s ease-in-out 1.4s infinite;
+}
+
+.ring-hearts {
+font-size: 20px;
+animation: heartBeat 1s ease-in-out infinite;
+}
+
+.ring-message {
+color: var(--muted);
+font-size: 12px;
+font-style: italic;
+margin: 10px 0;
+}
+
+.congratulations {
+color: var(--red);
+font-family: "Great Vibes", cursive;
+font-size: 37px;
+font-weight: 400;
+margin: 12px 0 5px;
+}
+
+.final-message {
+color: var(--muted);
+font-size: 13px;
+}
+
+.replay-btn {
+max-width: 230px;
+min-height: 45px;
+margin-top: 15px;
+font-size: 12px;
+}
+
+.floating-hearts {
+margin-top: 18px;
+font-size: 20px;
+letter-spacing: 3px;
+animation: heartsFloat 2s ease-in-out infinite;
+}
+
+/* Confetti */
+
+.confetti-layer {
+position: absolute;
+inset: 0;
+z-index: 1;
+overflow: hidden;
+pointer-events: none;
+}
+
+.confetti {
+position: absolute;
+top: -20px;
+
+width: 9px;
+height: 13px;
+
+background: var(--red);
+
+animation: confettiFall var(--fall-time, 3s) linear forwards;
+}
+
+.confetti:nth-child(3n) {
+background: #ffb4c0;
+border-radius: 50%;
+}
+
+.confetti:nth-child(3n + 1) {
+background: #ffffff;
+}
+
+.confetti:nth-child(3n + 2) {
+background: #f5c45e;
+}
+
+/* Keyframes */
+
+@keyframes brideArrives {
+from {
+opacity: 0;
+transform: translateX(-65px);
+}
+
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes groomArrives {
+from {
+opacity: 0;
+transform: translateX(65px);
+}
+
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes ringAppears {
+from {
+opacity: 0;
+transform: scale(0);
+}
+
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+@keyframes ringSparkle {
+0%, 100% {
+transform: scale(1) rotate(-8deg);
+}
+
+50% {
+transform: scale(1.2) rotate(8deg);
+}
+}
+
+@keyframes heartBeat {
+0%, 100% {
+transform: scale(1);
+}
+
+50% {
+transform: scale(1.2);
+}
+}
+
+@keyframes heartsFloat {
+0%, 100% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(-8px);
+}
+}
+
+@keyframes confettiFall {
+to {
+transform: translate3d(var(--drift, 0px), 105vh, 0) rotate(720deg);
+opacity: 0;
+}
+}
+
+/* Footer */
+
+footer {
+position: relative;
+z-index: 1;
+text-align: center;
+padding: 15px 10px 25px;
+color: var(--muted);
+font-size: 11px;
+line-height: 1.8;
+}
+
+footer strong {
+color: var(--red);
+}
+
+/* Accessibility */
+
+button:focus-visible {
+outline: 3px solid #e58b98;
+outline-offset: 4px;
+}
+
+@media (max-width: 380px) {
+.page {
+padding: 20px 12px;
+}
+
+.invitation-card {
+padding: 30px 18px;
+}
+
+.couple {
+gap: 6px;
+}
+
+.wedding-card {
+padding: 28px 15px;
+}
+
+.wedding-card h2 {
+font-size: 22px;
+}
+
+.congratulations {
+font-size: 32px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+scroll-behavior: auto !important;
+transition-duration: 0.01ms !important;
+}
+}
